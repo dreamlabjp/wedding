@@ -1,8 +1,16 @@
 ---
-layout: default
-title: プラン・特典｜
 ---
 
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+   {% include _head.inc.htm %}
+  
+  <title>プラン・特典｜{{ site.title }}</title>
+  
+  <link rel="canonical" href="https://morioka.metropolitan.jp/wedding/{{ page.url }}">
+  <meta name='description' content='{{ site.description }}'>
 
 	<style>
 		.planbox {
@@ -16,8 +24,10 @@ title: プラン・特典｜
 		}
 	</style>
 
-
-
+</head>
+	  
+	  <body>
+	   {% include _header.inc.htm %}
 
 	<h2 class="text-center">
 		<img src="/wedding/_assets/wing_gold.svg" alt="ホテルメトロポリタン盛岡ウエディング" class="mt-16 mb-2 mx-auto w-1/4 sm:w-1/12" >
@@ -141,6 +151,7 @@ title: プラン・特典｜
 <!--==========-->
 <!--==========-->
 <!--==========-->
+   {% include _footer.inc.htm %}
 
 
 	<script>
@@ -159,4 +170,6 @@ title: プラン・特典｜
 			});
 		});
 	</script>
-
+	
+	  </body>
+	</html>
