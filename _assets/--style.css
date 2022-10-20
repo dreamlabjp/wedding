@@ -1,0 +1,490 @@
+		@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
+		* {
+			font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", 
+				"Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+				"メイリオ", "Meiryo",  "ＭＳ Ｐゴシック",
+				sans-serif;
+			line-height: 1.8;
+			color: #675952
+		}
+
+		.notoserifjp {
+			font-family: "游明朝体", "Yu Mincho", YuMincho, 'Noto Serif JP';
+			line-height: 1.8 !important;
+		}
+
+		body {
+			margin: 0;
+			/* モーダルを全画面表示させるため余白は 0 にする*/
+			padding: 0;
+			overflow-y: scroll;
+			/* 縦スクロールバーを常に表示 */
+		}
+
+
+		.text--gold {
+			color: #948143;
+		}
+
+		.text--pink {
+			color: #cf928f;
+		}
+
+		.text--red {
+			color: #9f1730;
+		}
+
+		.text--beige {
+			color: #f8f3e9;
+		}
+		hr.divider--type1 {
+			border-bottom: 1px solid #beb2aa;
+			border-top: none;
+		}
+		hr.divider--type2 {
+			border-bottom: 1px solid #9f1730;
+			border-top: none;
+		}
+		.btn--type1 {
+			background: rgba(0,0,0,.3);border-top: 1px solid #fff;border-bottom: 1px solid #fff;
+		}
+		.btn--type2gold {
+			color: #fff;background: #948143;
+		}
+
+		.btnbg--gray {
+			background: #ddd8d7;
+		}
+		.bg--beige {
+			background: #f8f3e9;
+		}
+
+		.text--dividerC {
+			display: flex;
+			align-items: center;
+		}
+
+		.text--dividerC::before,
+		.text--dividerC::after {
+			content: '';
+			height: 1px;
+			background-color: #948143;
+			flex-grow: 1;
+		}
+
+		.text--dividerC::before {
+			margin-right: .5rem;
+		}
+
+		.text--dividerC::after {
+			margin-left: .5rem;
+		}
+
+
+	#bottombtnset {
+			display: none;
+		}
+		
+		#bottombtnset.active {
+			display: block;
+		}
+		
+		#menu {
+			display: none;
+		}
+		
+		#menu.active {
+			display: block;
+		}
+		
+		.menuUp {
+			animation-name: menuUpAnime;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			opacity: 0;
+		}
+		
+		@keyframes menuUpAnime {
+			from {
+				opacity: 0;
+				transform: translateX(-100px);
+			}
+		
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		
+		#downmenu {
+			display: none;
+		}
+		
+		#downmenu.active {
+			display: block;
+		}
+		
+		.menuDown {
+			animation-name: menuDownAnime;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			opacity: 0;
+		}
+		
+		@keyframes menuDownAnime {
+			from {
+				opacity: 0;
+				transform: translateY(-100px);
+			}
+		
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		
+		#btn {
+			display: none;
+		}
+		
+		#btn.active {
+			display: block;
+		}
+		
+		.btnUp {
+			animation-name: btnUpAnime;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			opacity: 0;
+		}
+		
+		@keyframes btnUpAnime {
+			from {
+				opacity: 0;
+				transform: translateY(100px);
+			}
+		
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		
+		
+		@media not (max-width:576px) {
+			#fairbtn {}
+		}
+		
+		
+		
+		
+		
+		
+		#modal2 {
+			background: rgba(0, 0, 0, .1);
+			;
+			height: 100vh;
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			-webkit-backdrop-filter: blur(4px);
+			backdrop-filter: blur(4px);
+			display: none;
+		}
+		
+		#modal2.active {
+			display: block;
+		}
+		
+		@media screen and (max-width:576px) {
+			#modal2 {
+				background: #f8f3e9;
+				-webkit-backdrop-filter: none;
+				backdrop-filter: none;
+			}
+		
+		}
+		
+		#modal {
+			/*fixedで全面に固定*/
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 20000;
+			width: 100%;
+			height: 100%;
+		
+			visibility: hidden;
+		}
+		
+		@media screen and (max-width:576px) {
+		
+			#modal,
+			#btn,
+			#menu {
+				display: none;
+				visibility: hidden;
+			}
+		
+		}
+		
+		#modal.active {
+			visibility: visible;
+		}
+
+		.openbtn {
+			/*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+			position: relative;
+			background: rgba(0, 0, 0, .3);
+			background: #ddd8d7;
+			cursor: pointer;
+			width: 4rem;
+			height: 4rem;
+		}
+
+		/*ボタン内側*/
+		.openbtn .openbtn-area {
+			transition: all .6s;
+			/*アニメーションの設定*/
+			width: 4rem;
+			height: 4rem;
+		}
+
+		.openbtn span {
+			display: inline-block;
+			transition: all .4s;
+			position: absolute;
+			left: 1rem;
+			height: 1px;
+			background: #beb2aa;
+			width: 50%;
+		}
+
+		.openbtn span:nth-of-type(1) {
+			top: 1.5rem;
+		}
+
+		.openbtn span:nth-of-type(2) {
+			top: 2rem;
+		}
+
+		.openbtn span:nth-of-type(3) {
+			top: 2.5rem;
+		}
+
+		/*activeクラスが付与されると .openbtn-areaが360度回転し、その中の線が回転して×に*/
+		.openbtn.active .openbtn-area {
+			/* transform: rotate(360deg); */
+		}
+
+		.openbtn.active span:nth-of-type(1) {
+			top: 1.5rem;
+			left: 1rem;
+			transform: translateY(.5rem) rotate(-45deg);
+			width: 50%;
+		}
+
+		.openbtn.active span:nth-of-type(2) {
+			opacity: 0;
+		}
+
+		.openbtn.active span:nth-of-type(3) {
+			top: 2.5rem;
+			left: 1rem;
+			transform: translateY(-.5rem) rotate(45deg);
+			width: 50%;
+		}
+
+
+
+
+
+		.switch {
+			cursor: pointer;
+		}
+
+		.plus {
+			position: relative;
+			/*ボタン内側の基点となるためrelativeを指定*/
+
+
+			cursor: pointer;
+			width: 1.5rem;
+			height: 1.5rem;
+			background: #000;
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 1rem;
+		}
+
+		/*ボタン内側*/
+		.plus span {
+			display: inline-block;
+			transition: all .4s;
+			/*アニメーションの設定*/
+			position: absolute;
+			left: 1px;
+			height: 1px;
+
+			background: #fff;
+		}
+
+
+		.plus span:nth-of-type(1) {
+			top: .75rem;
+			left: 25%;
+			width: 50%;
+		}
+
+		.plus span:nth-of-type(2) {
+			top: .75rem;
+			left: 25%;
+			width: 50%;
+			transform: rotate(-90deg);
+		}
+
+
+
+		/*activeクラスが付与されると線が回転して×になる*/
+
+
+
+		.plus.active span:nth-of-type(2) {
+			transform: rotate(0deg);
+		}
+
+		/*アコーディオンで現れるエリア*/
+		.open.active {
+			display: block;
+		}
+
+		.open {
+			display: none;
+		}
+
+		/* Loading*/
+		#splash {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 99999;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+			text-align: center;
+			color: #fff;
+		}
+
+		/* Loading画像中央配置　*/
+		#splash_logo {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		/* Loading アイコンの大きさ設定　*/
+		#splash_logo img {
+			width: 150px;
+		}
+
+		/* fadeUpをするアイコンの動き */
+		.fadeUp {
+			animation-name: fadeUpAnime;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			opacity: 0;
+		}
+
+		@keyframes fadeUpAnime {
+			from {
+				opacity: 0;
+				transform: translateY(100px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		
+		ul.wmn li {
+			font-size: 1.25rem;
+			color: #fff;
+			margin-top: calc(1.25vh);
+		}
+		
+		ul.wmn li strong {}
+		
+		.g--1 {
+			letter-spacing: calc(1em*75/1000);
+		}
+		
+		.wmn1 {
+			color: #fff;
+			font-size: 12px;
+			display: inline-block;
+			letter-spacing: 0;
+			margin-left: .5rem;
+		}
+		
+		/* モーダル外枠 */
+		.modal__wrapper {
+			position: fixed;
+			display: none;
+			width: 100%;
+			height: 100vh;
+			top: 0;
+			z-index: 77777;
+		}
+		
+		/* モーダル本体 */
+		.modal {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			background-color: #fff;
+			padding: 100px;
+			transform: translate(-50%, -50%);
+		}
+		
+		/* モーダルの背景 */
+		.overlay {
+			height: 100vh;
+			background-color: rgba(248, 243, 233, .5);
+			-webkit-backdrop-filter: blur(4px);
+			backdrop-filter: blur(4px);
+			cursor: pointer;
+		}
+		
+		@media screen and (max-width:576px) {
+			.overlay {
+				background-color: rgba(248, 243, 233, 1);
+			}
+		}
+		
+		
+		/* 以下は JavaScript でクラス付け替え時に使用する */
+		.displayon {
+			display: block;
+		}
+		
+		.displayoff {
+			display: none;
+		}
+		
+		.backgroundfix {
+			position: fixed;
+			width: 100%;
+		}
+		
+		#fairbtn1.inactive {
+			display: none;
+		}
+		
+		#fairbtn22.inactive {
+			display: none;
+		}

@@ -1,0 +1,84 @@
+		.swiper-wrapper {
+			padding-bottom: 3rem;
+			/* max-height: 300vh; */
+		}
+
+		/* Scrollbar */
+		.swiper-scrollbar {
+			border-radius: 0px;
+			position: relative;
+			-ms-touch-action: none;
+			/* background: rgba(0, 0, 0, 0.1); */
+			background: #f6f6f6;
+		}
+
+		:root {
+			--swiper-theme-color: #fff;
+		}
+
+		.swiper-horizontal>.swiper-scrollbar {
+			height: 2px;
+		}
+
+		.swiper-pagination-bullet {
+			border: 1px solid #ccc;
+		}
+
+		.swiper-pagination {
+			bottom: 1rem;
+		}
+
+		.swiper-slide img {
+			/* 		margin-bottom: .5rem; */
+			height: auto;
+			margin-bottom: .75rem;
+		}
+
+		.swiper-slide strong {
+			display: inline-block;
+			margin-bottom: .75rem;
+		}
+
+		.swiper-slide {
+			position: relative;
+		}
+
+		/* .swiper-slide span {
+	margin-top: -2rem;
+	display: block;
+	color: #fff;
+	background-color: rgba(0, 0, 0, .4);
+	z-index: 10000;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+} */
+
+		.swiper-button-prev {
+			content: none;
+			content: url("/wedding/_assets/arrow_left.svg");
+		}
+
+		.swiper-button-next {
+			content: none;
+			content: url("/wedding/_assets/arrow_right.svg");
+		}
+
+
+
+
+		@media screen and (min-width:576px) {
+
+			.swiper-slide img {
+				/* 		margin-bottom: .5rem; */
+				/* opacity: .5; */
+				width: 100%;
+				;
+			}
+
+			.swiper-slide-active img {
+				opacity: 1;
+			}
+
+
+		}
