@@ -56,12 +56,12 @@
 
 		.swiper-button-prev {
 			content: none;
-			content: url("/wedding/_assets/arrow_left.svg");
+			content: url("/wedding/assets/arrow_left.svg");
 		}
 
 		.swiper-button-next {
 			content: none;
-			content: url("/wedding/_assets/arrow_right.svg");
+			content: url("/wedding/assets/arrow_right.svg");
 		}
 
 
